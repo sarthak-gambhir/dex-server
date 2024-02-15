@@ -1,0 +1,18 @@
+{
+  "name": "dex-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sarthak-gambhir/dex-server.git",
+  "author": "astrabound <sarthak.gambhir@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "scripts": {
+    "dev": "nodemon index.js"
+  }
+}
