@@ -2,13 +2,14 @@ const express = require("express");
 const path = require("path");
 const socketio = require("socket.io");
 
-const { APPLICATION_HOST } = require("../config/defaults");
+const defaults = require("../config/defaults");
 const socketioConnectionHandler = require("../handlers/connection");
 
 const getApplicationServer = ({
-  port = APPLICATION_PORT,
-  host = APPLICATION_HOST,
+  port = defaults.SERVER_PORT,
+  host = defaults.SERVER_HOST,
   listenerCallback = null,
+  socketServerConfiguration = {},
 }) => {
   const app = express();
 
@@ -16,7 +17,7 @@ const getApplicationServer = ({
 
   const expressServer = app.listen(port, host, listenerCallback);
 
-  io = new socketio.Server(expressServer);
+  io = new socketio.Server(expressServer, socketServerConfiguration);
 
   io.on("connection", socketioConnectionHandler(io));
 

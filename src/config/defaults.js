@@ -1,7 +1,9 @@
-const APPLICATION_PORT = 5000;
-const APPLICATION_HOST = "0.0.0.0";
+const SERVER_PORT = 5000;
+const SERVER_HOST = "localhost";
+const CLIENT_URL = "http://localhost:3000";
 
 module.exports = {
-  APPLICATION_PORT,
-  APPLICATION_HOST,
+  SERVER_PORT,
+  SERVER_HOST,
+  CLIENT_URL,
 };
